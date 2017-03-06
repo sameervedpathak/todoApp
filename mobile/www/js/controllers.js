@@ -12,12 +12,33 @@ angular.module('starter.controllers', [])
   //});
 
   $scope.getstudentlist = function(){
-    $http.get(baseURL + 'getallstudentlist').success(function(res){
-      console.log(res);
-      $scope.studentlist = res;
-    }).error(function(error){
-      console.log("Please check the internet connection");
-    });
+    // $http.get(baseURL + 'getallstudentlist').success(function(res){
+    //   console.log(res);
+    //   $scope.studentlist = res;
+    // }).error(function(error){
+    //   console.log("Please check the internet connection");
+    // });
+     $scope.studentlist = [{
+        id: 0,
+        name: 'Ben Sparrow',
+        age: 20
+      }, {
+        id: 1,
+        name: 'Max Lynx',
+        age: 20
+      }, {
+        id: 2,
+        name: 'Adam Bradleyson',
+        age: 21
+      }, {
+        id: 3,
+        name: 'Perry Governor',
+        age: 20
+      }, {
+        id: 4,
+        name: 'Mike Harrington',
+        age: 21
+      }];
   };
 
   console.log($stateParams.studentdata);
