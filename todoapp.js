@@ -34,7 +34,6 @@ app.use(bodyParser.json({ type: 'application/*+json' }));
 app.get('/api/getallstudentlist' , function(req,res){
 	TodoCRUD.load({},function(err,result){
 		if(!err){
-			console.log("result:");
 			res.jsonp(result);
 		}else{
 			console.log("error");
