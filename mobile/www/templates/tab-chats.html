@@ -1,14 +1,18 @@
 <ion-view view-title="List">
   <ion-content>
     <ion-list ng-init="getstudentlist();">
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="stud in studentlist" type="item-text-wrap">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="stud in studentlist" type="item-text-wrap" >
         <h2>{{stud.name}}</h2>
         <p>Age : {{stud.age}}</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
-
-        <ion-option-button class="button-assertive" ng-click="remove(chat)">
-          Delete
-        </ion-option-button>
+        <span class="pull-right">
+              <i class="icon ion-edit icon-accessory edit" ui-sref="tab.editstudent({studentdata:stud})"></i>
+               <i class="icon ion-close icon-accessory"  ng-click="deletestud(stud)"></i>
+        </span>
+         <span>
+             
+        </span>
+      
+       
       </ion-item>
     </ion-list>
   </ion-content>

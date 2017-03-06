@@ -48,5 +48,51 @@ app.get('/api/getallstudentlist' , function(req,res){
 	})
 });
 
+app.post('/api/Updatestudent' , function(req,res){
+	console.log("req.body:",req.body);
+
+	TodoCRUD.update({
+		'id' : req.body.id
+	},{
+		'name' :req.body.name,
+		'age' : req.body.age
+	},function(err,result){
+		if(!err){
+			var responsedata = {
+                status: true,
+                record: result,
+                message: 'data updated successfully'
+            };
+            
+		}else{
+			var responsedata = {
+                status: false,
+                message: 'failed to update'
+            };
+		}
+		res.jsonp(responsedata);
+	});
+});
+
+app.get('/api/deletestudent/:id',function(req,res){
+	console.log(req.params);
+	TodoCRUD.destroy({'id' : req.params.id},function(err,result){
+		if(!err){
+			var responsedata = {
+                status: true,
+                message: 'record deleted'
+            };
+			
+		}else{
+			console.log("Error in deletestudent api");
+			var responsedata = {
+                status: false,
+                message: 'record failed to delete'
+            };
+		}
+		res.jsonp(responsedata);
+	})
+})
+
 app.listen(5000);
 console.log("server running on port 5000");
