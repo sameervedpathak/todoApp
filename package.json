@@ -1,0 +1,30 @@
+{
+  "name": "todoapp",
+  "version": "1.0.0",
+  "description": "simple app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sameervedpathak/todoApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sameervedpathak/todoApp/issues"
+  },
+  "homepage": "https://github.com/sameervedpathak/todoApp#readme",
+  "dependencies": {
+    "body-parser": "^1.17.0",
+    "connect": "^3.6.0",
+    "express": "^4.15.1",
+    "morgan": "^1.8.1",
+    "mysql": "^2.13.0",
+    "mysql-crud": "^0.1.4",
+    "path": "^0.12.7",
+    "serve-static": "^1.12.1",
+    "use-strict": "^1.0.1"
+  }
+}
